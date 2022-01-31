@@ -19,7 +19,7 @@ public class DecrementingCarouselWithLimitedRun extends DecrementingCarousel {
         if (arr.length == 0 || Arrays.stream(arr).sum() == 0 || actionLimit == 0)
             return -1;
 
-        if (i >= capacity&& && actionLimit > 0)
+        if (i >= capacity && actionLimit > 0)
             while (arr[i] == 0) {
                 i++;
                 if (i > arr.length - 1)
