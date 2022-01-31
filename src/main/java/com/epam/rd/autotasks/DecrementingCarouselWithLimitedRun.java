@@ -27,7 +27,7 @@ public class DecrementingCarouselWithLimitedRun extends DecrementingCarousel {
                     i = 0;
             }
         }
-        if (arr[i] > 0 && i < capacity - 1 && actionLimit > 0) {
+        if (arr[i] > 0 && i < capacity && actionLimit > 0) {
             actionLimit--;
             return arr[i++]--;
         }
