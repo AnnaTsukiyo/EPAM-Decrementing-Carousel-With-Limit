@@ -16,7 +16,7 @@ public class DecrementingCarouselWithLimitedRun extends DecrementingCarousel {
 
     @Override
     public int next() {
-        if (arr.length == 0 || Arrays.stream(arr).sum() <= 1 || actionLimit == 0) {
+        if (arr.length == 0 || Arrays.stream(arr).sum() <= 0 || actionLimit == 0) {
             return -1;
         }
         if (i >= capacity && actionLimit > 0) {
@@ -26,8 +26,7 @@ public class DecrementingCarouselWithLimitedRun extends DecrementingCarousel {
                 if (i > arr.length - 1)
                     i = 0;
             }
-        }
-        if (arr[i] > 0 && i < capacity && actionLimit > 0) {
+        } else if (arr[i] > 0 && actionLimit > 0) {
             actionLimit--;
             return arr[i++]--;
         }
@@ -45,6 +44,6 @@ public class DecrementingCarouselWithLimitedRun extends DecrementingCarousel {
 
     @Override
     public boolean isFinished() {
-        return  Arrays.stream(arr).sum() <= 1  || actionLimit == 0
+        return Arrays.stream(arr).sum() <= 0 || actionLimit == 0;
     }
 }
