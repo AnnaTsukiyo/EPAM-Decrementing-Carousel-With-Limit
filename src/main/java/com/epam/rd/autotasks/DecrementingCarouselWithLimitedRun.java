@@ -32,7 +32,6 @@ public class DecrementingCarouselWithLimitedRun extends DecrementingCarousel {
         }
         return 0;
     }
-
     @Override
     public DecrementingCarouselWithLimitedRun run() {
         if (!runEd) {
